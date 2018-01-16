@@ -15,7 +15,13 @@ get '/give_and_go' do
   'dodge'
 end
 
-get '/cat' do
+get '/random-cat' do
   @random = ["Amigo", "Oscar", "Viking"].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @random = params[:name]
   erb(:index)
 end
